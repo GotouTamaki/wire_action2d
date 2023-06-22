@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 //using static UnityEngine.GraphicsBuffer;
 
 public class PlayerController : MonoBehaviour
 {
+    // Actionをインスペクターから編集できるようにする
+    [SerializeField] private InputAction _action;
 
     // 左右移動する力
     [SerializeField] float _movePower = 5f;
