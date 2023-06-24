@@ -101,6 +101,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe4ca30afabc6a40b52e823e694acd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _action:
+    m_Name: Action
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 7dc12025-4203-44cc-a0a4-f1d9f4775082
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   _movePower: 7
   _jumpPower: 7
   _flipX: 0

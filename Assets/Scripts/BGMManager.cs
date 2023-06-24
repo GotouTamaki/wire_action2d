@@ -50,7 +50,7 @@ public class BGMManager : MonoBehaviour
         }
 
         //ステージ選択からステージへ
-        if (_beforeScene == "StageSelectScene" && (nextScene.name == "Stage_1" || nextScene.name == "Stage_2" || _beforeScene == "Stage_3"))
+        if (_beforeScene == "StageSelectScene" && (nextScene.name == "Stage_1" || nextScene.name == "Stage_2" || nextScene.name == "Stage_3"))
         {
             _source.Stop();
             _source.clip = _BGM_Stage;    //流すクリップを切り替える

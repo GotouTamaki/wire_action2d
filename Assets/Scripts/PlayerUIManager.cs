@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerUIManager : MonoBehaviour
@@ -9,9 +10,9 @@ public class PlayerUIManager : MonoBehaviour
     [SerializeField]
     Text _timer = default;
 
-    public static float _bestTime = 9999.99f;
     public static float _clearTime = 9999.99f;
     static float _time = 0;
+    string _sceneName = null;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class PlayerUIManager : MonoBehaviour
         // TimeText ‚ÉƒvƒŒƒCŽžŠÔ‚ð•\Ž¦‚·‚é
         _time += Time.deltaTime;
         _timer.text = _time.ToString("F2");
+        _sceneName = SceneManager.GetActiveScene().name;
     }
 
     public static void Result()
