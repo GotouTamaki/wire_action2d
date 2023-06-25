@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7202356619970500512}
   - component: {fileID: 7202356619970500513}
   - component: {fileID: 2230308201030514881}
+  - component: {fileID: 8628805974450135130}
+  - component: {fileID: 2191915337194826113}
   - component: {fileID: 2250764604503368394}
-  - component: {fileID: 7823811293741017470}
   m_Layer: 0
   m_Name: GameManeger
   m_TagString: Untagged
@@ -88,6 +89,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clearTimeUI: {fileID: 0}
+--- !u!114 &8628805974450135130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7202356619970500517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15b8ab26973a1fc4c9080a9e1526d24c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2191915337194826113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7202356619970500517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a465d13662d92f34f8e683d623f9069e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bestTimeText: {fileID: 0}
 --- !u!82 &2250764604503368394
 AudioSource:
   m_ObjectHideFlags: 0
@@ -184,16 +210,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7823811293741017470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7202356619970500517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15b8ab26973a1fc4c9080a9e1526d24c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bestTimeText: {fileID: 0}

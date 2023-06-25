@@ -5,22 +5,58 @@ using UnityEngine.UI;
 
 public class BestTimeUIManager : MonoBehaviour
 {
-    [SerializeField]
-    Text _bestTimeText = default;
-
-    public static float _bestTime = 9999.99f;
+    [SerializeField]  Text _bestTimeText = null;
+    [SerializeField] Stagename _stageName;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (_bestTime > PlayerUIManager._clearTime) 
+        if (_bestTimeText != null)
         {
-            _bestTime = PlayerUIManager._clearTime;
-            _bestTimeText.text = PlayerUIManager._clearTime.ToString("F2");
-        }
-        else
-        {
-            _bestTimeText.text = _bestTime.ToString("F2");
-        }
-    }   
+            if (_stageName == Stagename.StageTutorial)
+            {
+                StageTutorial();
+            }
+            else if (_stageName == Stagename.Stage1)
+            {
+                Stage1();
+            }
+            else if (_stageName == Stagename.Stage2)
+            {
+                Stage2();
+            }
+            else if (_stageName == Stagename.Stage3)
+            {
+                Stage3();
+            }
+        }       
+    }
+
+    enum Stagename
+    {
+        StageTutorial,
+        Stage1,
+        Stage2,
+        Stage3,
+    }
+
+    void StageTutorial()
+    {
+        _bestTimeText.text = BestTimeManager._bestTimeT.ToString("F2");
+    }
+
+    void Stage1()
+    {
+        _bestTimeText.text = BestTimeManager._bestTimeT.ToString("F2");
+    }
+
+    void Stage2()
+    {
+        _bestTimeText.text = BestTimeManager._bestTimeT.ToString("F2");
+    }
+
+    void Stage3()
+    {
+        _bestTimeText.text = BestTimeManager._bestTimeT.ToString("F2");
+    }
 }
