@@ -1399,6 +1399,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2191915337194826113, guid: a94171afaabcbfd4c9097b06882ab904, type: 3}
+      propertyPath: _bestTimeText
+      value: 
+      objectReference: {fileID: 1771983015}
     - target: {fileID: 7202356619970500512, guid: a94171afaabcbfd4c9097b06882ab904, type: 3}
       propertyPath: _statusWindow
       value: 

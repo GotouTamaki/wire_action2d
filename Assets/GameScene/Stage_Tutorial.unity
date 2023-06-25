@@ -554,6 +554,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2191915337194826113, guid: a94171afaabcbfd4c9097b06882ab904, type: 3}
+      propertyPath: _bestTimeText
+      value: 
+      objectReference: {fileID: 2000740712}
     - target: {fileID: 2230308201030514881, guid: a94171afaabcbfd4c9097b06882ab904, type: 3}
       propertyPath: _clearTimeUI
       value: 

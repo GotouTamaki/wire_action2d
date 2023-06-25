@@ -47,16 +47,16 @@ public class BestTimeUIManager : MonoBehaviour
 
     void Stage1()
     {
-        _bestTimeText.text = BestTimeManager._bestTimeT.ToString("F2");
+        _bestTimeText.text = BestTimeManager._bestTime1.ToString("F2");
     }
 
     void Stage2()
     {
-        _bestTimeText.text = BestTimeManager._bestTimeT.ToString("F2");
+        _bestTimeText.text = BestTimeManager._bestTime2.ToString("F2");
     }
 
     void Stage3()
     {
-        _bestTimeText.text = BestTimeManager._bestTimeT.ToString("F2");
+        _bestTimeText.text = BestTimeManager._bestTime3.ToString("F2");
     }
 }

@@ -1,53 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BestTimeManager : MonoBehaviour
 {
-    public static Text _bestTimeText = default;
-    public static float _bestTime = 9999.99f;
-    public static string _beforeScene = "Default";
     public static float _bestTime1 = 9999.99f;
     public static float _bestTime2 = 9999.99f;
     public static float _bestTime3 = 9999.99f;
     public static float _bestTimeT = 9999.99f;
 
     // Start is called before the first frame update
-    void Start()
+    public static void BestTime()
     {
-        _beforeScene = SceneManager.GetActiveScene().name;
-        _bestTimeText.text = _bestTime.ToString("F2");
-    } 
-    
-    void BestTime()
-    {
-        if (_bestTime > PlayerUIManager._clearTime)
+        if (ClearObjectManager._sceneName == "Stage_Tutorial")
         {
-            _bestTime = PlayerUIManager._clearTime;
+            if (_bestTimeT > PlayerUIManager._clearTime)
+            {
+                    _bestTimeT = PlayerUIManager._clearTime;
+            }
         }
-
-        switch (_beforeScene)
+        else if (ClearObjectManager._sceneName == "Stage_1")
         {
-            case "Stage_Tutorial":
-                _bestTimeT = _bestTime;
-                break;
-            case "Stage_1":
-                _bestTime1 = _bestTime;
-                break;
-            case "Stage_2":
-                _bestTime2 = _bestTime;
-                break;
-            case "Stage_3":
-                _bestTime3 = _bestTime;
-                break;
-        }    
-    }
-
-    void OnActiveSceneChanged(Scene prevScene, Scene nextScene)
-    {
-        //遷移後のシーン名を「１つ前のシーン名」として保持
-        _beforeScene = nextScene.name;
-    }
+            if (_bestTime1 > PlayerUIManager._clearTime)
+            {
+                _bestTime1 = PlayerUIManager._clearTime;
+            }
+        }
+        else if (ClearObjectManager._sceneName == "Stage_2")
+        {
+            if (_bestTime2 > PlayerUIManager._clearTime)
+            {
+                _bestTime2 = PlayerUIManager._clearTime;
+            }
+        }
+        else if (ClearObjectManager._sceneName == "Stage_3")
+        {
+            if (_bestTime3 > PlayerUIManager._clearTime)
+            {
+                _bestTime3 = PlayerUIManager._clearTime;
+            }
+        }
+    } 
 }
