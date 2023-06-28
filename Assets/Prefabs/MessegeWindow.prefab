@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1739267157}
   m_Layer: 0
   m_Name: TextEnable
-  m_TagString: Untagged
+  m_TagString: MessegeWindow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739267155}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.8, y: -0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 372828547249386727}
   m_Layer: 5
   m_Name: Text (Legacy)
-  m_TagString: Untagged
+  m_TagString: MessegeWindow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ RectTransform:
   m_GameObject: {fileID: 4570565575988408924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 431766509005865780}
@@ -140,18 +140,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e5c12db62e7b8f24495f161dc409f064, type: 3}
-    m_FontSize: 20
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 100
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u3042\u3044\u3046\u3048\u304A"
+  m_Text: test
 --- !u!1 &8669798167229782544
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 4584854385672979502}
   m_Layer: 5
   m_Name: MessegeWindow
-  m_TagString: Untagged
+  m_TagString: MessegeWindow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,7 +180,7 @@ RectTransform:
   m_GameObject: {fileID: 8669798167229782544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5879077060353526808}

@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class ClearTimeUIManager : MonoBehaviour
 {
-    [SerializeField]
-    Text _clearTimeUI = default;
+    [SerializeField] Text _clearTimeUI = default;
 
     // Start is called before the first frame update
     void Start()

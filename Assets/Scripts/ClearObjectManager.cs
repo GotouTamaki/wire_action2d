@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static Cinemachine.DocumentationSortingAttribute;
 
 public class ClearObjectManager : MonoBehaviour
 {
-    public static string _sceneName = null;
+    static string _sceneName = null;
 
     // Start is called before the first frame update
     void Start()
@@ -22,5 +23,10 @@ public class ClearObjectManager : MonoBehaviour
             BestTimeManager.BestTime();
             SceneManager.LoadScene("ClearScene");
         }
+    }
+
+    public static string GetSceneName()
+    {
+        return _sceneName;
     }
 }

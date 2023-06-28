@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    // Actionをインスペクターから編集できるようにする
+    /// Actionをインスペクターから編集できるようにする
     [SerializeField] private InputAction _action;
 
     // 左右移動する力
@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
         {
             _audioSource.PlayOneShot(_grap, _grapAudioScale);
         }
+
         if (Input.GetButton("Fire1") && _CanHook)
         {
             //Debug.Log("ワイヤーアクション！");
@@ -100,7 +101,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-        private void FixedUpdate()
+    private void FixedUpdate()
     {
         // 横移動の力を加えるのは FixedUpdate で行う
         _rb.AddForce(Vector2.right * _h * _movePower, ForceMode2D.Force);
@@ -136,9 +137,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "Target")
+        if (collision.gameObject.tag != "Target" || collision.gameObject.tag != "MessegeWindow")
         {
-            //Debug.Log("接地した");
+            Debug.Log("接地した");
             _isGrounded = true;
             _jumpcount = 0;
             _audioSource.PlayOneShot(_landing);
@@ -146,10 +147,10 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "Target")
+        if (collision.gameObject.tag != "Target" || collision.gameObject.tag == "MessegeWindow")
         {
             //Debug.Log("ジャンプした");
-            _isGrounded = false;
+            _isGrounded = false; 
         }
     }
 }

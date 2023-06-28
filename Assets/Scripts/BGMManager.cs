@@ -16,8 +16,8 @@ public class BGMManager : MonoBehaviour
     private string _beforeScene = "StageSelectScene";
     static private BGMManager _instance = null;
 
-        // Start is called before the first frame update
-        void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         //BGM‚ªŠù‚É‚ ‚é‚©‚ð”»’è‚·‚é
         if (_instance != null)
