@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BestTimeManager : MonoBehaviour
 {
+    // 各ステージのベストタイムを記録する
     static float _bestTime1 = 9999.99f;
     static float _bestTime2 = 9999.99f;
     static float _bestTime3 = 9999.99f;
@@ -12,6 +13,7 @@ public class BestTimeManager : MonoBehaviour
 
     public static void BestTime()
     {
+        // クリア時のステージ名と同じ名前に記録する
         if (ClearObjectManager.GetSceneName() == "Stage_Tutorial")
         {
             if (_bestTimeT > PlayerUIManager._clearTime)
@@ -42,6 +44,7 @@ public class BestTimeManager : MonoBehaviour
         }
     }
 
+    // 他のスクリプトから呼び出せるようにする
     public static float GetBestTimeT()
     {
         return _bestTimeT;

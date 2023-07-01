@@ -5,12 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class BGMManager : MonoBehaviour
 {
-    [SerializeField]
-    AudioClip _BGM_Title;
-    [SerializeField]
-    AudioClip _BGM_Tutorial;
-    [SerializeField]
-    AudioClip _BGM_Stage;
+    // 各ステージ用のBGM
+    [SerializeField] AudioClip _BGM_Title;
+    [SerializeField] AudioClip _BGM_Tutorial;
+    [SerializeField] AudioClip _BGM_Stage;
 
     private AudioSource _source;
     private string _beforeScene = "StageSelectScene";
@@ -28,20 +26,21 @@ public class BGMManager : MonoBehaviour
 
         _instance = this;
         _source = GetComponent<AudioSource>();
+        // このオブジェクトはシーンをまたいでも消されない
         DontDestroyOnLoad(gameObject);
-        //最初のBGM再生
+        // 最初のBGM再生
         _source.clip = _BGM_Title;
         _source.Play();
-        //シーンが切り替わった時に呼ばれるメソッドを登録
+        // シーンが切り替わった時に呼ばれるメソッドを登録
         SceneManager.activeSceneChanged += OnActiveSceneChanged;
     }
 
-    //シーンが切り替わった時に呼ばれるメソッド
+    // シーンが切り替わった時に呼ばれるメソッド
     void OnActiveSceneChanged(Scene prevScene, Scene nextScene)
     {
-        //シーンがどう変わったかで判定
+        // シーンがどう変わったかで判定
 
-        //ステージ選択からチュートリアルへ
+        // ステージ選択からチュートリアルへ
         if (_beforeScene == "StageSelectScene" && nextScene.name == "Stage_Tutorial")
         {
             _source.Stop();
@@ -49,7 +48,7 @@ public class BGMManager : MonoBehaviour
             _source.Play();
         }
 
-        //ステージ選択からステージへ
+        // ステージ選択からステージへ
         if (_beforeScene == "StageSelectScene" && (nextScene.name == "Stage_1" || nextScene.name == "Stage_2" || nextScene.name == "Stage_3"))
         {
             _source.Stop();
@@ -57,7 +56,7 @@ public class BGMManager : MonoBehaviour
             _source.Play();
         }
 
-        //ステージからタイトル、ステージ選択へ
+        // ステージからタイトル、ステージ選択へ
         if ((_beforeScene == "Stage_Tutorial" || _beforeScene == "Stage_1" || _beforeScene == "Stage_2" || _beforeScene == "Stage_3") && (nextScene.name == "TitleScene" || nextScene.name == "StageSelectScene"))
         {
             _source.Stop();
@@ -65,20 +64,20 @@ public class BGMManager : MonoBehaviour
             _source.Play();
         }
 
-        //ステージからクリア画面へ
+        // ステージからクリア画面へ
         if ((_beforeScene == "Stage_Tutorial" || _beforeScene == "Stage_1" || _beforeScene == "Stage_2" || _beforeScene == "Stage_3") && nextScene.name == "ClearScene")
         {
             _source.Stop();
         }
 
-        //クリア画面からタイトル、ステージ選択へ
+        // クリア画面からタイトル、ステージ選択へ
         if (_beforeScene == "ClearScene" && (nextScene.name == "TitleScene" || nextScene.name == "StageSelectScene"))
         {
             _source.clip = _BGM_Title; //流すクリップを切り替える
             _source.Play();
         }
 
-        //遷移後のシーン名を「１つ前のシーン名」として保持
+        // 遷移後のシーン名を「１つ前のシーン名」として保持
         _beforeScene = nextScene.name;
     }
 }

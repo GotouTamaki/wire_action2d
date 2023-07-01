@@ -22,11 +22,13 @@ public class MenuManager : MonoBehaviour
     {
         //Time.timeScale = 1;
 
+        // メニュー画面の切り替え
         if (Input.GetKeyDown("escape"))
         {
             //_audio.Play();
             _statusWindow.SetActive(!_statusWindow.activeSelf);
 
+            // メニュー画面が開かれているならゲームを止める
             if (!_statusWindow.activeSelf)
             {
                 Time.timeScale = 1;

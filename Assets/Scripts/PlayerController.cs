@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    /// Actionをインスペクターから編集できるようにする
+    // Actionをインスペクターから編集できるようにする
     [SerializeField] private InputAction _action;
 
     // 左右移動する力
@@ -16,19 +16,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _jumpPower = 15f;
     // 入力に応じて左右を反転させるかどうかのフラグ
     [SerializeField] bool _flipX = false;
-    //ターゲットカーソル
+    // ターゲットカーソル
     [SerializeField] GameObject _target;
-    //引っ張られる強さ
+    // 引っ張られる強さ
     [SerializeField] float _springPower = 1f;
     [SerializeField] AudioClip _landing = default;
     [SerializeField] AudioClip _grap = default;
     [SerializeField] float _grapAudioScale = 1f;
 
-    //各種初期化
+    // 各種初期化
     Rigidbody2D _rb = default;
     SpriteRenderer _sprite = default;
-    // m_colors に使う添字
-    //int m_colorIndex;
+    // _colors に使う添字
+    //int _colorIndex;
     // 水平方向の入力値
     float _h;
     float _scaleX;
@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag != "Target" || collision.gameObject.tag != "MessegeWindow")
         {
-            Debug.Log("接地した");
+            //Debug.Log("接地した");
             _isGrounded = true;
             _jumpcount = 0;
             _audioSource.PlayOneShot(_landing);

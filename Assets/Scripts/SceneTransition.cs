@@ -9,6 +9,7 @@ public class SceneTransition : MonoBehaviour
     //[SerializeField] Image[] _images = new Image[2];
     //[SerializeField] Color _selectColor = Color.white;
 
+    // ƒV[ƒ“‘JˆÚ‚ÌŒø‰Ê‰¹
     AudioSource _se = default;
 
     // Start is called before the first frame update

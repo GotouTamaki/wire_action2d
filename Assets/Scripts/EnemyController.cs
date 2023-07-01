@@ -84,11 +84,13 @@ public class EnemyController : MonoBehaviour
         CatchMove,
     }
 
+    // 何も動きがない
     void MoveStope()
     {
         //Debug.Log("敵停止");
     }
 
+    // 元の場所に戻ろうとする
     void MovePoint0() 
     {
         // 自分自身とターゲットの距離を求める
@@ -106,6 +108,7 @@ public class EnemyController : MonoBehaviour
 
     }
 
+    // 横の往復移動
     void HoriSinCurveMove()
     {
         _wave = Mathf.Sin(_time * _moveSpeed) * _amplitude;
@@ -113,6 +116,7 @@ public class EnemyController : MonoBehaviour
         _rb.velocity = new Vector2(_wave, _rb.velocity.y);
     }
 
+    // 縦の往復移動
     void VertSinCurveMove()
     {
         _wave = Mathf.Sin(_time * _moveSpeed) * _amplitude;
@@ -125,6 +129,7 @@ public class EnemyController : MonoBehaviour
 
     }
 
+    // カメラ内かどうかを判定する
     public bool InsideCamera()
     {
         float x = Camera.main.ViewportToWorldPoint(Vector2.one).x;

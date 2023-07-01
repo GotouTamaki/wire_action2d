@@ -10,6 +10,7 @@ public class ClearTimeUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // クリアタイムを表示する
         _clearTimeUI.text = PlayerUIManager._clearTime.ToString("F2");
     }
 }

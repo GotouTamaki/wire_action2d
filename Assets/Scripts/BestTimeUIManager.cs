@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class BestTimeUIManager : MonoBehaviour
 {
+    // テキストにベストタイムを記録する
     [SerializeField] Text _bestTimeText = null;
     [SerializeField] StageName _stageName;
 
     // Start is called before the first frame update
     void Start()
     {
+        // 表示するタイムを切り替える
         if (_bestTimeText != null)
         {
             if (_stageName == StageName.StageTutorial)

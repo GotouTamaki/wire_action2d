@@ -7,12 +7,10 @@ using UnityEngine.UI;
 public class PlayerUIManager : MonoBehaviour
 {
     // 経過時間を表示するオブジェクト
-    [SerializeField]
-    Text _timer = default;
+    [SerializeField] Text _timer = default;
 
     public static float _clearTime = 9999.99f;
     static float _time = 0;
-    string _sceneName = null;
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +25,9 @@ public class PlayerUIManager : MonoBehaviour
         // TimeText にプレイ時間を表示する
         _time += Time.deltaTime;
         _timer.text = _time.ToString("F2");
-        _sceneName = SceneManager.GetActiveScene().name;
     }
 
+    // クリアタイムを記録する
     public static void Result()
     {
         _clearTime = _time;
