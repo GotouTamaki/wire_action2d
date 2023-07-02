@@ -60,6 +60,7 @@ public class TargetController : MonoBehaviour
         }
     }
 
+    // カーソルの動きを設定する
     private void TargetMove()
     {
         // Camera.main でメインカメラ（MainCamera タグの付いた Camera）を取得する

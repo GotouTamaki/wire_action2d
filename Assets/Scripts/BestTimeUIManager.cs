@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BestTimeUIManager : MonoBehaviour
 {
-    // テキストにベストタイムを記録する
+    // テキストにベストタイムを表示する
     [SerializeField] Text _bestTimeText = null;
     [SerializeField] StageName _stageName;
 

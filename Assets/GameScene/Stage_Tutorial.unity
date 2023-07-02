@@ -627,6 +627,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7829771679774872110, guid: f0b5e75ba53502047af13596d6f3bcc6, type: 3}
+      propertyPath: _moveMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0b5e75ba53502047af13596d6f3bcc6, type: 3}
 --- !u!1001 &765474427
@@ -829,6 +833,10 @@ PrefabInstance:
       propertyPath: _clearTimeUI
       value: 
       objectReference: {fileID: 2069703641}
+    - target: {fileID: 7202356619970500512, guid: a94171afaabcbfd4c9097b06882ab904, type: 3}
+      propertyPath: _menuWindow
+      value: 
+      objectReference: {fileID: 2092616693}
     - target: {fileID: 7202356619970500512, guid: a94171afaabcbfd4c9097b06882ab904, type: 3}
       propertyPath: _statusWindow
       value: 

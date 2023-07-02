@@ -5,14 +5,14 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject _statusWindow;
+    GameObject _menuWindow;
 
     AudioSource _audio = default;
 
     // Start is called before the first frame update
     void Start()
     {
-        _statusWindow.SetActive(false);
+        _menuWindow.SetActive(false);
         Time.timeScale = 1;
         _audio = GetComponent<AudioSource>();
     }
@@ -26,10 +26,10 @@ public class MenuManager : MonoBehaviour
         if (Input.GetKeyDown("escape"))
         {
             //_audio.Play();
-            _statusWindow.SetActive(!_statusWindow.activeSelf);
+            _menuWindow.SetActive(!_menuWindow.activeSelf);
 
             // メニュー画面が開かれているならゲームを止める
-            if (!_statusWindow.activeSelf)
+            if (!_menuWindow.activeSelf)
             {
                 Time.timeScale = 1;
                 //Debug.Log("memu crose");

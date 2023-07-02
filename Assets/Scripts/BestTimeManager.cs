@@ -13,7 +13,7 @@ public class BestTimeManager : MonoBehaviour
 
     public static void BestTime()
     {
-        // クリア時のステージ名と同じ名前に記録する
+        // ベストタイムをクリア時のステージ名と同じ名前に記録する
         if (ClearObjectManager.GetSceneName() == "Stage_Tutorial")
         {
             if (_bestTimeT > PlayerUIManager._clearTime)

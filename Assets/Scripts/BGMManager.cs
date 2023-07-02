@@ -44,7 +44,7 @@ public class BGMManager : MonoBehaviour
         if (_beforeScene == "StageSelectScene" && nextScene.name == "Stage_Tutorial")
         {
             _source.Stop();
-            _source.clip = _BGM_Tutorial; //流すクリップを切り替える
+            _source.clip = _BGM_Tutorial;   // 流すクリップを切り替える
             _source.Play();
         }
 
@@ -52,7 +52,7 @@ public class BGMManager : MonoBehaviour
         if (_beforeScene == "StageSelectScene" && (nextScene.name == "Stage_1" || nextScene.name == "Stage_2" || nextScene.name == "Stage_3"))
         {
             _source.Stop();
-            _source.clip = _BGM_Stage;    //流すクリップを切り替える
+            _source.clip = _BGM_Stage;  // 流すクリップを切り替える
             _source.Play();
         }
 
@@ -60,7 +60,7 @@ public class BGMManager : MonoBehaviour
         if ((_beforeScene == "Stage_Tutorial" || _beforeScene == "Stage_1" || _beforeScene == "Stage_2" || _beforeScene == "Stage_3") && (nextScene.name == "TitleScene" || nextScene.name == "StageSelectScene"))
         {
             _source.Stop();
-            _source.clip = _BGM_Title;    //流すクリップを切り替える
+            _source.clip = _BGM_Title;  // 流すクリップを切り替える
             _source.Play();
         }
 
@@ -73,7 +73,7 @@ public class BGMManager : MonoBehaviour
         // クリア画面からタイトル、ステージ選択へ
         if (_beforeScene == "ClearScene" && (nextScene.name == "TitleScene" || nextScene.name == "StageSelectScene"))
         {
-            _source.clip = _BGM_Title; //流すクリップを切り替える
+            _source.clip = _BGM_Title;  // 流すクリップを切り替える
             _source.Play();
         }
 

@@ -25,6 +25,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // 初期位置を記録する(MovePoint0用)
         _initialPosition = this.transform.position;
         _rb = GetComponent<Rigidbody2D>();
     }
@@ -32,6 +33,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // カメラ内でのみ時間を足す(sin用)
         if (InsideCamera() == true)
         {
             _time += Time.deltaTime;
@@ -55,10 +57,6 @@ public class EnemyController : MonoBehaviour
             {
                 MovePoint0();
             }
-            else if (_moveMode == MoveMode.Patrol)
-            {
-                Patrol();
-            }
             else if (_moveMode == MoveMode.HoriSinCurveMove)
             {
                 HoriSinCurveMove();
@@ -67,10 +65,6 @@ public class EnemyController : MonoBehaviour
             {
                 VertSinCurveMove();
             }
-            else if (_moveMode == MoveMode.CatchMove)
-            {
-                CatchMove();
-            }
         }
     }
 
@@ -78,10 +72,8 @@ public class EnemyController : MonoBehaviour
     {
         MoveStope,
         MovePoint0,
-        Patrol,
         HoriSinCurveMove,
         VertSinCurveMove,
-        CatchMove,
     }
 
     // 何も動きがない
@@ -96,16 +88,11 @@ public class EnemyController : MonoBehaviour
         // 自分自身とターゲットの距離を求める
         float distance = Vector2.Distance(this.transform.position, _initialPosition);
 
-        if (distance > _stoppingDistance)  // ターゲットに到達するまで処理する
+        if (distance > _stoppingDistance)   // ターゲットに到達するまで処理する
         {
             Vector3 dir = (_initialPosition - this.transform.position).normalized * _moveSpeed; // 移動方向のベクトルを求める
             _rb.AddForce(dir * _moveSpeed, ForceMode2D.Force);
         }
-    }
-
-    void Patrol()
-    {
-
     }
 
     // 横の往復移動
@@ -124,11 +111,6 @@ public class EnemyController : MonoBehaviour
         _rb.velocity = new Vector2(_rb.velocity.x, _wave);
     }
 
-    void CatchMove()
-    {
-
-    }
-
     // カメラ内かどうかを判定する
     public bool InsideCamera()
     {
@@ -140,7 +122,6 @@ public class EnemyController : MonoBehaviour
             return true;
         }
         return false;
-
     }
 }
 

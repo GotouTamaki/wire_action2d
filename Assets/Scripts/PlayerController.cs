@@ -20,8 +20,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject _target;
     // ˆø‚Á’£‚ç‚ê‚é‹­‚³
     [SerializeField] float _springPower = 1f;
+    // Œø‰Ê‰¹
     [SerializeField] AudioClip _landing = default;
     [SerializeField] AudioClip _grap = default;
+    // _grap‚Ì‰¹—Ê’²®
     [SerializeField] float _grapAudioScale = 1f;
 
     // Šeí‰Šú‰»

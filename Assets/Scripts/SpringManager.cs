@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SpringManager : MonoBehaviour
 {
+    // ‘Šè‚É—^‚¦‚é—Í‚Ì‹­‚³‚ğİ’è‚·‚é
     [SerializeField]
     private float _jumpForce = 20.0f;
 
+    // Œø‰Ê‰¹—p‚ÌAudioSource
     AudioSource _audio = default;
 
     private void Start()

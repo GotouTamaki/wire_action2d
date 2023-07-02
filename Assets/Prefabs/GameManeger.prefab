@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18eea8c1503d3f4abd3d1b0b36cbb39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _statusWindow: {fileID: 0}
+  _menuWindow: {fileID: 0}
 --- !u!114 &7202356619970500513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bestTimeText: {fileID: 0}
+  _stageName: 0
 --- !u!82 &2250764604503368394
 AudioSource:
   m_ObjectHideFlags: 0
