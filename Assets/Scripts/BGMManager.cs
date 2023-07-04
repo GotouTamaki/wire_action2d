@@ -22,6 +22,10 @@ public class BGMManager : MonoBehaviour
             // このオブジェクトはシーンをまたいでも消されない
             DontDestroyOnLoad(gameObject);
             _instance = this;
+            // 最初のBGM再生
+            _source = GetComponent<AudioSource>();
+            _source.clip = _BGM_Title;
+            _source.Play();
             // シーンが切り替わった時に呼ばれるメソッドを登録
             SceneManager.activeSceneChanged += OnActiveSceneChanged;
         }
@@ -31,15 +35,6 @@ public class BGMManager : MonoBehaviour
             GameObject.Destroy(this);
         }
 
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _source = GetComponent<AudioSource>();
-        // 最初のBGM再生
-        _source.clip = _BGM_Title;
-        _source.Play();
     }
 
     // シーンが切り替わった時に呼ばれるメソッド
