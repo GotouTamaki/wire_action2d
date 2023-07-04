@@ -1,67 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BestTimeManager : MonoBehaviour
 {
-    // 各ステージのベストタイムを記録する
-    static float _bestTime1 = 9999.99f;
-    static float _bestTime2 = 9999.99f;
-    static float _bestTime3 = 9999.99f;
-    static float _bestTimeT = 9999.99f;
+    public static BestTimeManager _instance;
+    // ベストタイム用のDictionary
+    public Dictionary<string, float> _bestTime = new Dictionary<string, float>();
 
-    public static void BestTime()
+    // シングルトンの設定
+    void Awake()
     {
-        // ベストタイムをクリア時のステージ名と同じ名前に記録する
-        if (ClearObjectManager.GetSceneName() == "Stage_Tutorial")
+        //BestTimeManagerが既にあるかを判定する
+        if (_instance == null)
         {
-            if (_bestTimeT > PlayerUIManager._clearTime)
-            {
-                _bestTimeT = PlayerUIManager._clearTime;
-            }
+            // このオブジェクトはシーンをまたいでも消されない
+            DontDestroyOnLoad(gameObject);
+            _instance = this;
+            SceneManager.sceneLoaded += SceneLoaded;
         }
-        else if (ClearObjectManager.GetSceneName() == "Stage_1")
+        else 
         {
-            if (_bestTime1 > PlayerUIManager._clearTime)
-            {
-                _bestTime1 = PlayerUIManager._clearTime;
-            }
+            // 既にあるならDestroyする
+            GameObject.Destroy(this);
         }
-        else if (ClearObjectManager.GetSceneName() == "Stage_2")
-        {
-            if (_bestTime2 > PlayerUIManager._clearTime)
-            {
-                _bestTime2 = PlayerUIManager._clearTime;
-            }
-        }
-        else if (ClearObjectManager.GetSceneName() == "Stage_3")
-        {
-            if (_bestTime3 > PlayerUIManager._clearTime)
-            {
-                _bestTime3 = PlayerUIManager._clearTime;
-            }
-        }
+
     }
 
-    // 他のスクリプトから呼び出せるようにする
-    public static float GetBestTimeT()
+    // シーンが読み込まれた時に移動先のシーンの名前とベストタイムの初期値をDictionaryに追加する
+    void SceneLoaded(Scene nextScene, LoadSceneMode mode)
     {
-        return _bestTimeT;
-    }
-
-    public static float GetBestTime1()
-    {
-        return _bestTime1;
-    }
-
-    public static float GetBestTime2()
-    {
-        return _bestTime2;
-    }
-
-    public static float GetBestTime3()
-    {
-        return _bestTime3;
+        if (!_bestTime.ContainsKey(nextScene.name) && nextScene.name.Contains("Stage")) _bestTime.Add(nextScene.name, 9999.99f);
     }
 }

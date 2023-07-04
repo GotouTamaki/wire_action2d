@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8397801281564125121}
   - component: {fileID: 670713487215652560}
   - component: {fileID: 5510985613190831958}
+  - component: {fileID: 2797200138873058648}
   m_Layer: 5
   m_Name: BestTimeUI (Legacy)
   m_TagString: Untagged
@@ -80,6 +81,19 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 9999.99
+--- !u!114 &2797200138873058648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889054807728338997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a465d13662d92f34f8e683d623f9069e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stageName: 0
 --- !u!1 &2292205163201614311
 GameObject:
   m_ObjectHideFlags: 0

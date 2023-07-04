@@ -30,25 +30,14 @@ public class EnemyController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // カメラ内でのみ時間を足す(sin用)
-        if (InsideCamera() == true)
-        {
-            _time += Time.deltaTime;
-        }
-        else if (InsideCamera() == false)
-        {
-            _rb.velocity = new Vector2(0, 0);
-            //Debug.Log("止まる");
-        }
-    }
-
     private void FixedUpdate()
     {
+
         if (InsideCamera())
         {
+            // カメラ内でのみ時間を足す(sin用)
+            _time += Time.deltaTime;
+
             if (_moveMode == MoveMode.MoveStope)
             {
                 MoveStope();
@@ -66,6 +55,12 @@ public class EnemyController : MonoBehaviour
                 VertSinCurveMove();
             }
         }
+        else if (!InsideCamera())
+        {
+            _rb.velocity = new Vector2(0, 0);
+            //Debug.Log("止まる");
+        }
+
     }
 
     enum MoveMode
@@ -99,7 +94,7 @@ public class EnemyController : MonoBehaviour
     void HoriSinCurveMove()
     {
         _wave = Mathf.Sin(_time * _moveSpeed) * _amplitude;
-        //Debug.Log(_x);
+        //Debug.Log(_wave);
         _rb.velocity = new Vector2(_wave, _rb.velocity.y);
     }
 
@@ -107,7 +102,7 @@ public class EnemyController : MonoBehaviour
     void VertSinCurveMove()
     {
         _wave = Mathf.Sin(_time * _moveSpeed) * _amplitude;
-        //Debug.Log(_x);
+        //Debug.Log(_wave);
         _rb.velocity = new Vector2(_rb.velocity.x, _wave);
     }
 

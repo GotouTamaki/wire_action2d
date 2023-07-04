@@ -5,60 +5,32 @@ using UnityEngine.UI;
 
 public class BestTimeUIManager : MonoBehaviour
 {
-    // テキストにベストタイムを表示する
-    [SerializeField] Text _bestTimeText = null;
     [SerializeField] StageName _stageName;
+
+    Text _bestTimeText = null;
 
     // Start is called before the first frame update
     void Start()
     {
+        _bestTimeText = GetComponent<Text>();
+
         // 表示するタイムを切り替える
         if (_bestTimeText != null)
         {
-            if (_stageName == StageName.StageTutorial)
+            // テキストにベストタイムを表示する
+            if (BestTimeManager._instance._bestTime.ContainsKey(_stageName.ToString()))
             {
-                StageTutorial();
-            }
-            else if (_stageName == StageName.Stage1)
-            {
-                Stage1();
-            }
-            else if (_stageName == StageName.Stage2)
-            {
-                Stage2();
-            }
-            else if (_stageName == StageName.Stage3)
-            {
-                Stage3();
-            }
+                _bestTimeText.text = BestTimeManager._instance._bestTime[_stageName.ToString()].ToString("F2");
+            }           
         }       
     }
 
     enum StageName
     {
-        StageTutorial,
-        Stage1,
-        Stage2,
-        Stage3,
-    }
-
-    void StageTutorial()
-    {
-        _bestTimeText.text = BestTimeManager.GetBestTimeT().ToString("F2");
-    }
-
-    void Stage1()
-    {
-        _bestTimeText.text = BestTimeManager.GetBestTime1().ToString("F2");
-    }
-
-    void Stage2()
-    {
-        _bestTimeText.text = BestTimeManager.GetBestTime2().ToString("F2");
-    }
-
-    void Stage3()
-    {
-        _bestTimeText.text = BestTimeManager.GetBestTime3().ToString("F2");
+        // ステージの名前と完全に一致してないといけない
+        Stage_Tutorial,
+        Stage_1,
+        Stage_2,
+        Stage_3,
     }
 }

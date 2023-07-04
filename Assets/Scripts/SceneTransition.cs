@@ -31,7 +31,6 @@ public class SceneTransition : MonoBehaviour
 
     public void TitleScene()
     {
-        //Debug.Log("TitleScene");
         SceneManager.LoadScene("TitleScene");
     }
 

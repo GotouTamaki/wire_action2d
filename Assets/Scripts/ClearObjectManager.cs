@@ -22,16 +22,15 @@ public class ClearObjectManager : MonoBehaviour
         {
             // クリアタイムを記録
             PlayerUIManager.Result();
+
             // ベストタイムかを判定、記録する
-            BestTimeManager.BestTime();
-            // リザルトへ移動
+            if (BestTimeManager._instance._bestTime[_sceneName] > PlayerUIManager._clearTime )
+            {
+                BestTimeManager._instance._bestTime[_sceneName] = PlayerUIManager._clearTime;
+            }
+
+            // クリアシーンへ移動
             SceneManager.LoadScene("ClearScene");
         }
-    }
-
-    public static string GetSceneName()
-    {
-        // クリアしたシーンを呼び出せるようにする
-        return _sceneName;
     }
 }
