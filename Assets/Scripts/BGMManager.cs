@@ -10,8 +10,8 @@ public class BGMManager : MonoBehaviour
     [SerializeField] AudioClip _BGM_Tutorial;
     [SerializeField] AudioClip _BGM_Stage;
 
-    private AudioSource _source;
-    static private BGMManager _instance = null;
+    AudioSource _source;
+    static BGMManager _instance = null;
 
     // ƒVƒ“ƒOƒ‹ƒgƒ“‚Ìİ’è
     private void Awake()
