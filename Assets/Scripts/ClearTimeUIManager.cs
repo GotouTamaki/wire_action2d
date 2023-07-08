@@ -11,6 +11,6 @@ public class ClearTimeUIManager : MonoBehaviour
     void Start()
     {
         // クリアタイムを表示する
-        _clearTimeUI.text = PlayerUIManager._clearTime.ToString("F2");
+        _clearTimeUI.text = TimerManager._clearTime.ToString("F2");
     }
 }

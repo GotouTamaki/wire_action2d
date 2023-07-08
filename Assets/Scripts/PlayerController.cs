@@ -36,9 +36,9 @@ public class PlayerController : MonoBehaviour
     float _scaleX;
     // 最初に出現した座標
     Vector3 _initialPosition;
-    // 設置判定
+    // 接地判定
     bool _isGrounded = false;
-    int _jumpcount = 0;
+    int _jumpCount = 0;
     //this._target.transform.positionとthis.transform.positionの差
     Vector2 _diff;
     //ワイヤーアクションの可否
@@ -67,9 +67,9 @@ public class PlayerController : MonoBehaviour
         _sprite = GetComponent<SpriteRenderer>();
 
         // 各種入力を受け取る
-        if (Input.GetButtonDown("Jump") && (_isGrounded || _jumpcount < 2))
+        if (Input.GetButtonDown("Jump") && (_isGrounded || _jumpCount < 2))
         {
-            _jumpcount++;
+            _jumpCount++;
             //Debug.Log("ここにジャンプする処理を書く。");
             _rb.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
         }
@@ -143,7 +143,7 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("接地した");
             _isGrounded = true;
-            _jumpcount = 0;
+            _jumpCount = 0;
             _audioSource.PlayOneShot(_landing);
         }
     }

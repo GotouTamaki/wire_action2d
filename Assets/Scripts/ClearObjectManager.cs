@@ -21,12 +21,12 @@ public class ClearObjectManager : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             // クリアタイムを記録
-            PlayerUIManager.Result();
+            TimerManager.Result();
 
             // ベストタイムかを判定、記録する
-            if (BestTimeManager._instance._bestTime[_sceneName] > PlayerUIManager._clearTime )
+            if (BestTimeManager._instance._bestTime[_sceneName] > TimerManager._clearTime )
             {
-                BestTimeManager._instance._bestTime[_sceneName] = PlayerUIManager._clearTime;
+                BestTimeManager._instance._bestTime[_sceneName] = TimerManager._clearTime;
             }
 
             // クリアシーンへ移動
