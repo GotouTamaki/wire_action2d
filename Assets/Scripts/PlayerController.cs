@@ -147,6 +147,7 @@ public class PlayerController : MonoBehaviour
             _audioSource.PlayOneShot(_landing);
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag != "Target" || collision.gameObject.tag == "MessegeWindow")

@@ -884,7 +884,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 259381718}
         m_TargetAssemblyTypeName: SceneTransition, Assembly-CSharp
-        m_MethodName: StageSelectScene
+        m_MethodName: SelectScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

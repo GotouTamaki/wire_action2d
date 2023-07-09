@@ -301,7 +301,7 @@ PrefabInstance:
       objectReference: {fileID: 217619407}
     - target: {fileID: 3269861151047883827, guid: e8479706bcdbecd4896f4eac40dd3ba4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StageSelectScene
+      value: SelectScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8479706bcdbecd4896f4eac40dd3ba4, type: 3}

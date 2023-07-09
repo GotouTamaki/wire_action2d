@@ -20,12 +20,9 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Time.timeScale = 1;
-
         // メニュー画面の切り替え
         if (Input.GetKeyDown("escape"))
         {
-            //_audio.Play();
             _menuWindow.SetActive(!_menuWindow.activeSelf);
 
             // メニュー画面が開かれているならゲームを止める

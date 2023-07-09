@@ -26,7 +26,7 @@ public class MessegeWindowManager : MonoBehaviour
         // ‹——£‚ðŒvŽZ‚·‚é
         distance = Vector2.Distance(this.transform.position, _target.transform.position);
 
-        // ‹——£‚Å•\Ž¦‚³‚¹‚é‚©‚ðŒˆ‚ß‚é
+        // ‹——£‚Å•\Ž¦‚³‚¹‚é‚©‚Ì”»’è‚ð‚·‚é
         if (distance < _onMessegeDistance) 
         {
             _messegeWindow.enabled = true;

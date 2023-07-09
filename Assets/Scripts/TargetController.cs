@@ -10,7 +10,7 @@ public class TargetController : MonoBehaviour
     [SerializeField] GameObject _player;
     // カーソルの色変更
     [SerializeField] Color _defaultColor;
-    [SerializeField] Color _catchColor;
+    [SerializeField] Color _changeColor;
 
 
     LineRenderer _line;
@@ -48,8 +48,8 @@ public class TargetController : MonoBehaviour
             // カーソルの位置を固定する
             this.transform.position = this.transform.position;
             // 色を指定する
-            _line.startColor = _catchColor;
-            _line.endColor = _catchColor;
+            _line.startColor = _changeColor;
+            _line.endColor = _changeColor;
         }
         else
         {

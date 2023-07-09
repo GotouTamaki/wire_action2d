@@ -34,9 +34,9 @@ public class SceneTransition : MonoBehaviour
         SceneManager.LoadScene("TitleScene");
     }
 
-    public void StageSelectScene()
+    public void SelectScene()
     {
-        SceneManager.LoadScene("StageSelectScene");
+        SceneManager.LoadScene("SelectScene");
     }
 
     public void OperationExplanation()
