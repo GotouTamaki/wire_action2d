@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BestTimeUIManager : MonoBehaviour
+public class BestTimeUIManager : BestTimeManager
 {
     [SerializeField] StageName _stageName;
 
@@ -18,9 +18,9 @@ public class BestTimeUIManager : MonoBehaviour
         if (_bestTimeText != null)
         {
             // テキストにベストタイムを表示する
-            if (BestTimeManager._instance._bestTime.ContainsKey(_stageName.ToString()))
+            if (_instance._bestTime.ContainsKey(_stageName.ToString()))
             {
-                _bestTimeText.text = BestTimeManager._instance._bestTime[_stageName.ToString()].ToString("F2");
+                _bestTimeText.text = _instance._bestTime[_stageName.ToString()].ToString("F2");
             }           
         }       
     }

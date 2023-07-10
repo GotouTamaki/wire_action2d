@@ -22,8 +22,13 @@ public class TimerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 最大値になるまでタイムを計測する
+        if (_time < 9999.99f)
+        {
+            _time += Time.deltaTime;
+        }
+
         // TimeText にプレイ時間を表示する
-        _time += Time.deltaTime;
         _timer.text = _time.ToString("F2");
     }
 
