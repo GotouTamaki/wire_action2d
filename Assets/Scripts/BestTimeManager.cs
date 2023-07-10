@@ -31,6 +31,9 @@ public class BestTimeManager : MonoBehaviour
     // シーンが読み込まれた時に移動先のシーンの名前とベストタイムの初期値をDictionaryに追加する
     void SceneLoaded(Scene nextScene, LoadSceneMode mode)
     {
-        if (!_bestTime.ContainsKey(nextScene.name) && nextScene.name.Contains("Stage")) _bestTime.Add(nextScene.name, 9999.99f);
+        if (!_bestTime.ContainsKey(nextScene.name) && nextScene.name.Contains("Stage"))
+        {
+            _bestTime.Add(nextScene.name, 9999.99f);
+        }         
     }
 }
